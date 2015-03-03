@@ -1,7 +1,8 @@
-<%if current_user %>
-Signined in as @<%= current_user.name %>
+<p><%if current_user %>
+Signined in as <%= current_user.name %>
 <%= link_to "Sign Out", sessions_logout_path %>
 <% else %>
-
-<%= link_to "Sign in with Twitter", "/auth/twitter" %>
+<p><%= link_to "Sign in with Twitter", "/auth/twitter" %></p>
+<p><%= link_to "Sign in with Facebook", "/auth/facebook" %></p>
 <% end %>
+</p>
