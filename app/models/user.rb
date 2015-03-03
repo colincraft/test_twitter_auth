@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
     where(provider: auth.provider, uid: auth.uid).first || create_from_omniauth(auth) 
   end
   def self.create_from_omniauth(auth)
+    puts "#{auth["provider"]}"
+    p auth
     create! do |user|
       user.provider = auth["provider"]
       user.uid = auth["uid"]
